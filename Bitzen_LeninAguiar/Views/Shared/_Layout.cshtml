@@ -6,6 +6,7 @@
     <title>@ViewData["Title"] - Bitzen Lenin Aguiar</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/lib/jquery-ui-1.12.1/jquery-ui.css" />
 </head>
 <body>
     <header>
@@ -43,12 +44,19 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2020 - Bitzen_LeninAguiar 
+            &copy; 2020 - Bitzen_LeninAguiar
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/jquery-ui-1.12.1/jquery-ui.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script>
+        $(document).ready(function () {
+            //alert('Bla');
+            $('#datasupply').datepicker();
+        });
+    </script>
     @RenderSection("Scripts", required: false)
 </body>
 </html>

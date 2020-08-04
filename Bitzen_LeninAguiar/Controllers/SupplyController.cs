@@ -13,16 +13,28 @@ namespace Bitzen_LeninAguiar.Controllers
     public class SupplyController : Controller
     {
         private SupplyService supplyService;
+        private VehicleService vehicleService;
 
         public SupplyController()
         {
             supplyService = new SupplyService();
+            vehicleService = new VehicleService();
         }
 
         // GET: Supply
         public ActionResult Index()
         {
-            return View();
+            SupplyViewModel viewModel = new SupplyViewModel();
+            try {
+                int userid = (int)TempData["UserId"];
+                TempData["UserId"] = userid;
+                viewModel.supplies = supplyService.FindByUserId(userid);
+            }
+            catch(Exception ex)
+            {
+
+            }
+            return View(viewModel);
         }
 
         // GET: Supply/Details/5
@@ -34,7 +46,19 @@ namespace Bitzen_LeninAguiar.Controllers
         // GET: Supply/Create
         public ActionResult Create()
         {
-            return View();
+            SupplyViewModel viewModel = new SupplyViewModel();
+
+            try { 
+                int userid = (int)TempData["UserId"];
+                var vehicles =  vehicleService.FindByUser(userid);
+                viewModel.vehicles = vehicles;
+                viewModel.userid = userid;
+            }
+            catch(Exception ex)
+            {
+
+            }
+            return View(viewModel);
         }
 
         // POST: Supply/Create
@@ -45,7 +69,13 @@ namespace Bitzen_LeninAguiar.Controllers
             try
             {
                 Supply supply = new Supply();
-                int userid = (int)TempData["UserId"];
+                int userid = 0;
+
+                if (TempData["UserId"] != null)
+                    userid = (int)TempData["UserId"];
+                else
+                    userid = viewModel.userid;
+
                 supply.datasupply = viewModel.datasupply;
                 supply.fueltype = viewModel.fueltype;
                 supply.kmsupply = viewModel.kmsupply;
@@ -53,8 +83,11 @@ namespace Bitzen_LeninAguiar.Controllers
                 supply.userid = userid;
                 supply.value = viewModel.value;
                 supply.vehicleid = viewModel.vehicleid;
+                supply.companyname = viewModel.companyname;
 
                 bool result = supplyService.Create(supply);
+                var vehicles = vehicleService.FindByUser(userid);
+                viewModel.vehicles = vehicles;
 
                 if (result)
                     viewModel.message = "Cadastro Realizado com sucesso!";

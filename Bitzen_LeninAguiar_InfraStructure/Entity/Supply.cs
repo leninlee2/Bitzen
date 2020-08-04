@@ -22,6 +22,8 @@ namespace Bitzen_LeninAguiar_InfraStructure.Entity
         
         public int vehicleid { get; set; }
 
+        public String companyname { get; set; }
+
     }
 
 }

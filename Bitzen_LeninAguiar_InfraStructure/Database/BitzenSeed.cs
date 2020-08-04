@@ -15,7 +15,7 @@ namespace Bitzen_LeninAguiar_InfraStructure.Database
 
             commandContainer.Append("create table Vehicle(id int auto_increment primary key,brand varchar(100), model varchar(100), year int, plaque varchar(20), transporttype char(1), fueltype char(1) , kilometers int, userid int, photopath varchar(2000) );");
 
-            commandContainer.Append("create table Supply(id int auto_increment primary key,kmsupply int, quantity int, value float, datasupply date, userid int, fueltype char(1) , vehicleid int );");
+            commandContainer.Append("create table Supply(id int auto_increment primary key,kmsupply int, quantity int, value float, datasupply date, userid int, fueltype char(1) , vehicleid int, companyname varchar(2000) );");
 
 
         }

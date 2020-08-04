@@ -1,4 +1,4 @@
-﻿
+﻿@model SupplyViewModel
 @{
     ViewData["Title"] = "Criar Novo Abastecimento";
 }
@@ -10,36 +10,47 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-2">
-            <span>Tipo Veículo</span>
-            <input type="text" class="form-control" />
-        </div>
-        <div class="col-sm-2">
+            @Html.HiddenFor(w => w.userid)
             <span>Km Abastecimento</span>
-            <input type="text" class="form-control" />
+            <input type="text" class="form-control" name="kmsupply" />
         </div>
         <div class="col-sm-2">
             <span>Litros Abastecimento</span>
-            <input type="text" class="form-control" />
+            <input type="text" class="form-control" name="quantity" />
         </div>
         <div class="col-sm-2">
             <span>Valor Pago</span>
-            <input type="text" class="form-control" />
+            <input type="text" class="form-control" name="value" />
+        </div>
+        <div class="col-sm-2">
+            <span>Data Abastecimento</span>
+            <input type="text" class="form-control" name="datasupply" id="datasupply" />
         </div>
     </div>
     <div class="row">
         <div class="col-sm-2">
-            <span>Data Abastecimento</span>
-            <input type="text" class="form-control" />
-        </div>
-        <div class="col-sm-2">
             <span>Posto Abastecimento</span>
-            <input type="text" class="form-control" />
+            <input type="text" class="form-control" name="companyname" />
         </div>
         <div class="col-sm-2">
             <span>Tipo Combustível</span>
-            <input type="text" class="form-control" />
+            <select class="form-control" name="fueltype">
+                <option value="G">Gasolina</option>
+                <option value="A">Álcool</option>
+                <option value="D">Dísel</option>
+            </select>
         </div>
-        <div class="col-sm-2">
+        <div class="col-sm-4">
+            <span>Veículo</span>
+            <select class="form-control" name="vehicleid" >
+                @if(Model.vehicles != null)
+                {
+                    @foreach(var item in Model.vehicles)
+                    {
+                        <option value="@item.id">@item.brand - @item.model</option>
+                    }
+                }
+            </select>
         </div>
     </div>
     <div class="row">

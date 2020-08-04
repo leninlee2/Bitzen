@@ -3,6 +3,7 @@ using Bitzen_LeninAguiar_InfraStructure.Entity;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 
 namespace Bitzen_LeninAguiar_Domain.Service
 {
@@ -27,6 +28,17 @@ namespace Bitzen_LeninAguiar_Domain.Service
 
             }
             return result;
+        }
+
+        public List<Supply> FindByUserId(int userid)
+        {
+            List<Supply> supplies = new List<Supply>();
+            try {
+                supplies = supplyRepository.findAll().Where(w => w.userid == userid).ToList();
+            }
+            catch(Exception ex) { 
+            }
+            return supplies;
         }
 
     }
