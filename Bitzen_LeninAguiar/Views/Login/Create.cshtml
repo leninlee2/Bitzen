@@ -1,0 +1,47 @@
+﻿@model LoginViewModel
+@{
+    ViewData["Title"] = "Novo Cadastro";
+}
+
+<h3>Novo Cliente</h3>
+@using (Html.BeginForm("Create", "Login",FormMethod.Post) )
+{
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-4">
+            @Model.message
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+            <span>Nome</span>
+            <input type="text" class="form-control" name="name" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+            <span>E-mail(Login)</span>
+            <input type="text" class="form-control" name="login" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+            <span>Senha</span>
+            <input type="text" class="form-control" name="password" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+            <br />
+            <div class="text-right">
+                <input type="submit" id="send" name="send" class="btn btn-success" value="Registrar" />
+
+                @Html.ActionLink("Logout", "Index", "Home", new { }, new { @class = "btn btn-success" })
+
+            </div>
+        </div>
+    </div>
+</div>
+}
+

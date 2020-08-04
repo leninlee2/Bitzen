@@ -1,0 +1,11 @@
+C:\Users\2560p\source\repos\Bitzen_LeninAguiar\Bitzen_LeninAguiar_InfraStructure\bin\Debug\netcoreapp3.1\Bitzen_LeninAguiar_InfraStructure.dll.config
+C:\Users\2560p\source\repos\Bitzen_LeninAguiar\Bitzen_LeninAguiar_InfraStructure\bin\Debug\netcoreapp3.1\Bitzen_LeninAguiar_InfraStructure.deps.json
+C:\Users\2560p\source\repos\Bitzen_LeninAguiar\Bitzen_LeninAguiar_InfraStructure\bin\Debug\netcoreapp3.1\Bitzen_LeninAguiar_InfraStructure.runtimeconfig.json
+C:\Users\2560p\source\repos\Bitzen_LeninAguiar\Bitzen_LeninAguiar_InfraStructure\bin\Debug\netcoreapp3.1\Bitzen_LeninAguiar_InfraStructure.runtimeconfig.dev.json
+C:\Users\2560p\source\repos\Bitzen_LeninAguiar\Bitzen_LeninAguiar_InfraStructure\bin\Debug\netcoreapp3.1\Bitzen_LeninAguiar_InfraStructure.dll
+C:\Users\2560p\source\repos\Bitzen_LeninAguiar\Bitzen_LeninAguiar_InfraStructure\bin\Debug\netcoreapp3.1\Bitzen_LeninAguiar_InfraStructure.pdb
+C:\Users\2560p\source\repos\Bitzen_LeninAguiar\Bitzen_LeninAguiar_InfraStructure\obj\Debug\netcoreapp3.1\Bitzen_LeninAguiar_InfraStructure.AssemblyInfoInputs.cache
+C:\Users\2560p\source\repos\Bitzen_LeninAguiar\Bitzen_LeninAguiar_InfraStructure\obj\Debug\netcoreapp3.1\Bitzen_LeninAguiar_InfraStructure.AssemblyInfo.cs
+C:\Users\2560p\source\repos\Bitzen_LeninAguiar\Bitzen_LeninAguiar_InfraStructure\obj\Debug\netcoreapp3.1\Bitzen_LeninAguiar_InfraStructure.dll
+C:\Users\2560p\source\repos\Bitzen_LeninAguiar\Bitzen_LeninAguiar_InfraStructure\obj\Debug\netcoreapp3.1\Bitzen_LeninAguiar_InfraStructure.pdb
+C:\Users\2560p\source\repos\Bitzen_LeninAguiar\Bitzen_LeninAguiar_InfraStructure\obj\Debug\netcoreapp3.1\Bitzen_LeninAguiar_InfraStructure.csprojAssemblyReference.cache

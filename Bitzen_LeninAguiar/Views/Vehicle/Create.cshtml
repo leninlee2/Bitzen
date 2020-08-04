@@ -1,0 +1,74 @@
+﻿@model VehicleViewModel
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h3>Novo Veiculo</h3>
+@using (Html.BeginForm("Create", "Vehicle", FormMethod.Post))
+{
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-6">
+                <span>@Model.message</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2">
+                <span>Marca</span>
+                <input type="text" class="form-control" name="brand" />
+            </div>
+            <div class="col-sm-2">
+                <span>Modelo</span>
+                <input type="text" class="form-control" name="model" />
+            </div>
+            <div class="col-sm-2">
+                <span>Ano</span>
+                <input type="text" class="form-control" name="year" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2">
+                <span>Placa</span>
+                <input type="text" class="form-control" name="plaque" />
+            </div>
+            <div class="col-sm-2">
+                <span>Tipo de Veiculo</span>
+                <select class="form-control" name="transporttype">
+                    <option value="C">Carro</option>
+                    <option value="M">Moto</option>
+                    <option value="A">Caminhão</option>
+                </select>
+            </div>
+            <div class="col-sm-2">
+                <span>Tipo de Combustível</span>
+                <select class="form-control" name="fueltype">
+                    <option value="G">Gasolina</option>
+                    <option value="A">Álcool</option>
+                    <option value="D">Dísel</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2">
+                <span>Quilometragem</span>
+                <input type="text" class="form-control" name="kilometers" />
+            </div>
+            <div class="col-sm-4">
+                <span>Foto</span>
+                <input type="text" class="form-control" name="photopath" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <br />
+                <div class="text-right">
+                    <input type="submit" id="send" name="send" class="btn btn-success" value="Registrar" />
+
+                    @Html.ActionLink("Consulta", "Index", "Vehicle", new { }, new { @class = "btn btn-success" })
+
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
