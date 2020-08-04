@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Bitzen_LeninAguiar.Models;
+using Bitzen_LeninAguiar_Domain.Service;
+using Bitzen_LeninAguiar_InfraStructure.Entity;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,6 +12,13 @@ namespace Bitzen_LeninAguiar.Controllers
 {
     public class SupplyController : Controller
     {
+        private SupplyService supplyService;
+
+        public SupplyController()
+        {
+            supplyService = new SupplyService();
+        }
+
         // GET: Supply
         public ActionResult Index()
         {
@@ -30,18 +40,34 @@ namespace Bitzen_LeninAguiar.Controllers
         // POST: Supply/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Create(SupplyViewModel viewModel)
         {
             try
             {
-                // TODO: Add insert logic here
+                Supply supply = new Supply();
+                int userid = (int)TempData["UserId"];
+                supply.datasupply = viewModel.datasupply;
+                supply.fueltype = viewModel.fueltype;
+                supply.kmsupply = viewModel.kmsupply;
+                supply.quantity = viewModel.quantity;
+                supply.userid = userid;
+                supply.value = viewModel.value;
+                supply.vehicleid = viewModel.vehicleid;
 
-                return RedirectToAction(nameof(Index));
+                bool result = supplyService.Create(supply);
+
+                if (result)
+                    viewModel.message = "Cadastro Realizado com sucesso!";
+                else
+                    viewModel.message = "Falha no cadastro de abastecimento";
+
+
             }
             catch
             {
-                return View();
+                
             }
+            return View();
         }
 
         // GET: Supply/Edit/5

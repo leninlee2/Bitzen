@@ -8309,11 +8309,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\2560p\\source\\repos\\Bitzen_LeninAguiar\\Bitzen_LeninAguiar\\Bitzen_LeninAguiar.csproj",
+      "projectUniqueName": "C:\\Projects\\Bitzen\\Bitzen\\Bitzen_LeninAguiar\\Bitzen_LeninAguiar.csproj",
       "projectName": "Bitzen_LeninAguiar",
-      "projectPath": "C:\\Users\\2560p\\source\\repos\\Bitzen_LeninAguiar\\Bitzen_LeninAguiar\\Bitzen_LeninAguiar.csproj",
+      "projectPath": "C:\\Projects\\Bitzen\\Bitzen\\Bitzen_LeninAguiar\\Bitzen_LeninAguiar.csproj",
       "packagesPath": "C:\\Users\\2560p\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\2560p\\source\\repos\\Bitzen_LeninAguiar\\Bitzen_LeninAguiar\\obj\\",
+      "outputPath": "C:\\Projects\\Bitzen\\Bitzen\\Bitzen_LeninAguiar\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\2560p\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -8329,8 +8329,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\2560p\\source\\repos\\Bitzen_LeninAguiar\\Bitzen_LeninAguiar_Domain\\Bitzen_LeninAguiar_Domain.csproj": {
-              "projectPath": "C:\\Users\\2560p\\source\\repos\\Bitzen_LeninAguiar\\Bitzen_LeninAguiar_Domain\\Bitzen_LeninAguiar_Domain.csproj"
+            "C:\\Projects\\Bitzen\\Bitzen\\Bitzen_LeninAguiar_Domain\\Bitzen_LeninAguiar_Domain.csproj": {
+              "projectPath": "C:\\Projects\\Bitzen\\Bitzen\\Bitzen_LeninAguiar_Domain\\Bitzen_LeninAguiar_Domain.csproj"
             }
           }
         }

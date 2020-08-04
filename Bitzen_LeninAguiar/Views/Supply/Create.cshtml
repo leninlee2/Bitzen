@@ -1,0 +1,57 @@
+﻿
+@{
+    ViewData["Title"] = "Criar Novo Abastecimento";
+}
+
+<h3>Criar Abastecimento</h3>
+
+@using (Html.BeginForm("Create", "Supply", FormMethod.Post))
+{
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-2">
+            <span>Tipo Veículo</span>
+            <input type="text" class="form-control" />
+        </div>
+        <div class="col-sm-2">
+            <span>Km Abastecimento</span>
+            <input type="text" class="form-control" />
+        </div>
+        <div class="col-sm-2">
+            <span>Litros Abastecimento</span>
+            <input type="text" class="form-control" />
+        </div>
+        <div class="col-sm-2">
+            <span>Valor Pago</span>
+            <input type="text" class="form-control" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-2">
+            <span>Data Abastecimento</span>
+            <input type="text" class="form-control" />
+        </div>
+        <div class="col-sm-2">
+            <span>Posto Abastecimento</span>
+            <input type="text" class="form-control" />
+        </div>
+        <div class="col-sm-2">
+            <span>Tipo Combustível</span>
+            <input type="text" class="form-control" />
+        </div>
+        <div class="col-sm-2">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-8">
+            <br />
+            <div class="text-right">
+                <input type="submit" id="send" name="send" class="btn btn-success" value="Registrar" />
+
+                @Html.ActionLink("Consulta", "Index", "Supply", new { }, new { @class = "btn btn-success" })
+
+            </div>
+        </div>
+    </div>
+</div>
+}

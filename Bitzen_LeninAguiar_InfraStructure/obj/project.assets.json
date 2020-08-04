@@ -6889,11 +6889,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\2560p\\source\\repos\\Bitzen_LeninAguiar\\Bitzen_LeninAguiar_InfraStructure\\Bitzen_LeninAguiar_InfraStructure.csproj",
+      "projectUniqueName": "C:\\Projects\\Bitzen\\Bitzen\\Bitzen_LeninAguiar_InfraStructure\\Bitzen_LeninAguiar_InfraStructure.csproj",
       "projectName": "Bitzen_LeninAguiar_InfraStructure",
-      "projectPath": "C:\\Users\\2560p\\source\\repos\\Bitzen_LeninAguiar\\Bitzen_LeninAguiar_InfraStructure\\Bitzen_LeninAguiar_InfraStructure.csproj",
+      "projectPath": "C:\\Projects\\Bitzen\\Bitzen\\Bitzen_LeninAguiar_InfraStructure\\Bitzen_LeninAguiar_InfraStructure.csproj",
       "packagesPath": "C:\\Users\\2560p\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\2560p\\source\\repos\\Bitzen_LeninAguiar\\Bitzen_LeninAguiar_InfraStructure\\obj\\",
+      "outputPath": "C:\\Projects\\Bitzen\\Bitzen\\Bitzen_LeninAguiar_InfraStructure\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\2560p\\AppData\\Roaming\\NuGet\\NuGet.Config",
