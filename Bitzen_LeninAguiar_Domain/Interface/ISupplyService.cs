@@ -9,6 +9,8 @@ namespace Bitzen_LeninAguiar_Domain.Interface
     {
         bool Create(Supply supply);
         List<Supply> FindByUserId(int userid);
+
+        List<Supply> SearchLitersMonth(int userid);
     }
 
 }

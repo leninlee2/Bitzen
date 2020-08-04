@@ -37,7 +37,10 @@ namespace Bitzen_LeninAguiar.Controllers
 
                 TempData["UserId"] = userid;
                 viewModel.userid = userid;
-                viewModel.supplies = supplyService.FindByUserId(userid);
+                if (supplyViewModel == null || supplyViewModel.supplies == null)
+                    viewModel.supplies = supplyService.FindByUserId(userid);
+                else
+                    viewModel.supplies = supplyViewModel.supplies;
             }
             catch(Exception ex)
             {
@@ -163,8 +166,12 @@ namespace Bitzen_LeninAguiar.Controllers
             if (TempData["UserId"] != null)
                 userid = (int)TempData["UserId"];
 
+            var result = supplyService.SearchLitersMonth(userid);
+            viewModel.supplies = result;
+            viewModel.userid = userid;
 
-            return RedirectToAction("Index",new {id = viewModel.reporttype, supplyViewModel = new SupplyViewModel() });
+
+            return RedirectToAction("Index",new {id = viewModel.reporttype, supplyViewModel = viewModel });
         }
 
         // POST: Supply/Delete/5
