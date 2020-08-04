@@ -24,8 +24,10 @@
     ".NETCoreApp,Version=v3.1": {
       "Bitzen_LeninAguiar/1.0.0": {
         "dependencies": {
+          "Autofac": "4.9.2",
           "Bitzen_LeninAguiar_Domain": "1.0.0",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "3.1.3",
+          "Ninject": "3.3.4",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies": "3.1.0.0",
@@ -301,6 +303,17 @@
         },
         "compile": {
           "Bitzen_LeninAguiar.dll": {}
+        }
+      },
+      "Autofac/4.9.2": {
+        "runtime": {
+          "lib/netstandard2.0/Autofac.dll": {
+            "assemblyVersion": "4.9.2.0",
+            "fileVersion": "4.9.2.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Autofac.dll": {}
         }
       },
       "BouncyCastle.NetCore/1.8.3": {
@@ -1158,6 +1171,21 @@
         },
         "compile": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        }
+      },
+      "Ninject/3.3.4": {
+        "dependencies": {
+          "System.Reflection.Emit.ILGeneration": "4.3.0",
+          "System.Reflection.Emit.Lightweight": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Ninject.dll": {
+            "assemblyVersion": "3.3.4.0",
+            "fileVersion": "3.3.4.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Ninject.dll": {}
         }
       },
       "NuGet.Frameworks/4.7.0": {
@@ -3858,6 +3886,13 @@
       "serviceable": false,
       "sha512": ""
     },
+    "Autofac/4.9.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-lfCcNOzU97f2WFtdo/+SkR0XtpdH20QA5Ob/T2Iv027wFMvDk7EZZ2oj6ERtWL+LBfPTOrbk9zyLj6Okx2CoHA==",
+      "path": "autofac/4.9.2",
+      "hashPath": "autofac.4.9.2.nupkg.sha512"
+    },
     "BouncyCastle.NetCore/1.8.3": {
       "type": "package",
       "serviceable": true,
@@ -4214,6 +4249,13 @@
       "sha512": "sha512-IvJe1pj7JHEsP8B8J8DwlMEx8UInrs/x+9oVY+oCD13jpLu4JbJU2WCIsMRn5C4yW9+DgkaO8uiVE5VHKjpmdQ==",
       "path": "newtonsoft.json/11.0.2",
       "hashPath": "newtonsoft.json.11.0.2.nupkg.sha512"
+    },
+    "Ninject/3.3.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-CmbWW97FfJuh4LEOVZM/spqXl4KAulRUjqeMwRd5J9rDMQArmIYaDMU3pyzXXHT062tbF0OPIMwI7tSOtprPfg==",
+      "path": "ninject/3.3.4",
+      "hashPath": "ninject.3.3.4.nupkg.sha512"
     },
     "NuGet.Frameworks/4.7.0": {
       "type": "package",

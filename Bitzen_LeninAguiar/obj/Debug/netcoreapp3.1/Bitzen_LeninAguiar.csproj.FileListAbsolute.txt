@@ -304,7 +304,6 @@ C:\Projects\Bitzen\Bitzen\Bitzen_LeninAguiar\bin\Debug\netcoreapp3.1\Bitzen_Leni
 C:\Projects\Bitzen\Bitzen\Bitzen_LeninAguiar\obj\Debug\netcoreapp3.1\Bitzen_LeninAguiar.csprojAssemblyReference.cache
 C:\Projects\Bitzen\Bitzen\Bitzen_LeninAguiar\obj\Debug\netcoreapp3.1\staticwebassets\Bitzen_LeninAguiar.StaticWebAssets.Manifest.cache
 C:\Projects\Bitzen\Bitzen\Bitzen_LeninAguiar\obj\Debug\netcoreapp3.1\staticwebassets\Bitzen_LeninAguiar.StaticWebAssets.xml
-C:\Projects\Bitzen\Bitzen\Bitzen_LeninAguiar\obj\Debug\netcoreapp3.1\Bitzen_LeninAguiar.MvcApplicationPartsAssemblyInfo.cache
 C:\Projects\Bitzen\Bitzen\Bitzen_LeninAguiar\obj\Debug\netcoreapp3.1\Bitzen_LeninAguiar.RazorAssemblyInfo.cache
 C:\Projects\Bitzen\Bitzen\Bitzen_LeninAguiar\obj\Debug\netcoreapp3.1\Bitzen_LeninAguiar.RazorAssemblyInfo.cs
 C:\Projects\Bitzen\Bitzen\Bitzen_LeninAguiar\obj\Debug\netcoreapp3.1\Bitzen_LeninAguiar.AssemblyInfoInputs.cache
@@ -331,3 +330,6 @@ C:\Projects\Bitzen\Bitzen\Bitzen_LeninAguiar\obj\Debug\netcoreapp3.1\Bitzen_Leni
 C:\Projects\Bitzen\Bitzen\Bitzen_LeninAguiar\obj\Debug\netcoreapp3.1\Bitzen_LeninAguiar.csproj.CopyComplete
 C:\Projects\Bitzen\Bitzen\Bitzen_LeninAguiar\obj\Debug\netcoreapp3.1\Bitzen_LeninAguiar.dll
 C:\Projects\Bitzen\Bitzen\Bitzen_LeninAguiar\obj\Debug\netcoreapp3.1\Bitzen_LeninAguiar.pdb
+C:\Projects\Bitzen\Bitzen\Bitzen_LeninAguiar\bin\Debug\netcoreapp3.1\Ninject.dll
+C:\Projects\Bitzen\Bitzen\Bitzen_LeninAguiar\bin\Debug\netcoreapp3.1\Autofac.dll
+C:\Projects\Bitzen\Bitzen\Bitzen_LeninAguiar\obj\Debug\netcoreapp3.1\Bitzen_LeninAguiar.MvcApplicationPartsAssemblyInfo.cache

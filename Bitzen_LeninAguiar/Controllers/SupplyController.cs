@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Bitzen_LeninAguiar.Models;
+using Bitzen_LeninAguiar_Domain.Interface;
 using Bitzen_LeninAguiar_Domain.Service;
 using Bitzen_LeninAguiar_InfraStructure.Entity;
 using Microsoft.AspNetCore.Http;
@@ -12,22 +13,30 @@ namespace Bitzen_LeninAguiar.Controllers
 {
     public class SupplyController : Controller
     {
-        private SupplyService supplyService;
-        private VehicleService vehicleService;
+        private ISupplyService supplyService;
+        private IVehicleService vehicleService;
 
-        public SupplyController()
+        public SupplyController(ISupplyService supplyService, IVehicleService vehicleService)
         {
-            supplyService = new SupplyService();
-            vehicleService = new VehicleService();
+            this.supplyService = supplyService;
+            this.vehicleService = vehicleService;
         }
 
         // GET: Supply
-        public ActionResult Index()
+        public ActionResult Index(int id)
         {
             SupplyViewModel viewModel = new SupplyViewModel();
             try {
-                int userid = (int)TempData["UserId"];
+                int userid = 0;
+
+                if (TempData["UserId"] != null)
+                    userid = (int)TempData["UserId"];
+                else
+                    userid = id;
+
+
                 TempData["UserId"] = userid;
+                viewModel.userid = userid;
                 viewModel.supplies = supplyService.FindByUserId(userid);
             }
             catch(Exception ex)
@@ -44,12 +53,20 @@ namespace Bitzen_LeninAguiar.Controllers
         }
 
         // GET: Supply/Create
-        public ActionResult Create()
+        public ActionResult Create(int id)
         {
             SupplyViewModel viewModel = new SupplyViewModel();
 
-            try { 
-                int userid = (int)TempData["UserId"];
+            try {
+                int userid = 0;
+                if (TempData["UserId"] != null)
+                    userid = (int)TempData["UserId"];
+                else
+                {
+                    userid = id;
+                    TempData["UserId"] = userid;
+                }
+                    
                 var vehicles =  vehicleService.FindByUser(userid);
                 viewModel.vehicles = vehicles;
                 viewModel.userid = userid;
@@ -74,7 +91,11 @@ namespace Bitzen_LeninAguiar.Controllers
                 if (TempData["UserId"] != null)
                     userid = (int)TempData["UserId"];
                 else
+                {
                     userid = viewModel.userid;
+                    TempData["UserId"] = userid;
+                }
+                    
 
                 supply.datasupply = viewModel.datasupply;
                 supply.fueltype = viewModel.fueltype;
@@ -100,7 +121,7 @@ namespace Bitzen_LeninAguiar.Controllers
             {
                 
             }
-            return View();
+            return View(viewModel);
         }
 
         // GET: Supply/Edit/5

@@ -2,6 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Autofac;
+using Bitzen_LeninAguiar_Domain.Interface;
+using Bitzen_LeninAguiar_Domain.Service;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -24,6 +27,34 @@ namespace Bitzen_LeninAguiar
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            var builder = new ContainerBuilder();
+
+            // Register individual components
+            builder.RegisterInstance(new LoginService())
+                   .As<ILoginService>();
+
+            builder.RegisterInstance(new VehicleService())
+                   .As<IVehicleService>();
+
+            builder.RegisterInstance(new SupplyService())
+                    .As<ISupplyService>();
+            //builder.RegisterType<TaskController>();
+            //builder.Register(c => new LogManager(DateTime.Now))
+            //       .As<ILogger>();
+
+            // Scan an assembly for components
+            //builder.RegisterAssemblyTypes(myAssembly)
+            //       .Where(t => t.Name.EndsWith("Repository"))
+            //       .AsImplementedInterfaces();
+
+            var container = builder.Build();
+
+            services.AddTransient<ILoginService, LoginService>();
+            services.AddTransient<IVehicleService, VehicleService>();
+            services.AddTransient<ISupplyService, SupplyService>();
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

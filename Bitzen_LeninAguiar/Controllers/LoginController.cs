@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Bitzen_LeninAguiar.Models;
+using Bitzen_LeninAguiar_Domain.Interface;
 using Bitzen_LeninAguiar_Domain.Service;
 using Bitzen_LeninAguiar_InfraStructure.Entity;
 using Microsoft.AspNetCore.Http;
@@ -12,11 +13,11 @@ namespace Bitzen_LeninAguiar.Controllers
 {
     public class LoginController : Controller
     {
-        LoginService loginService;
+        ILoginService loginService;
 
-        public LoginController()
+        public LoginController(ILoginService loginService)
         {
-            loginService = new LoginService();
+            this.loginService = loginService;
         }
 
         public ActionResult Index(LoginViewModel viewModel)
@@ -31,6 +32,7 @@ namespace Bitzen_LeninAguiar.Controllers
                 {
                     viewModel.authenticated = true;
                     TempData["UserId"] = result.id;
+                    //Microsoft.AspNetCore.Session.DistributedSession["UserId"] = result.id;//.SetInt32("UserId", result.id);
                 }
                 else
                     viewModel.message = "Login ou senhas inválidos";

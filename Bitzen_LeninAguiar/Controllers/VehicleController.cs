@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Bitzen_LeninAguiar.Models;
+using Bitzen_LeninAguiar_Domain.Interface;
 using Bitzen_LeninAguiar_Domain.Service;
 using Bitzen_LeninAguiar_InfraStructure.Entity;
 using Microsoft.AspNetCore.Http;
@@ -13,23 +14,29 @@ namespace Bitzen_LeninAguiar.Controllers
     public class VehicleController : Controller
     {
 
-        private VehicleService vehicleService;
+        private IVehicleService vehicleService;
 
-        public VehicleController()
+        public VehicleController(IVehicleService vehicleService)
         {
-            vehicleService = new VehicleService();
+            this.vehicleService = vehicleService;
         }
 
         // GET: Vehicle
-        public ActionResult Index()
+        public ActionResult Index(int id)
         {
             VehicleViewModel viewModel = new VehicleViewModel();
             try {
                 //get all vehicles by user
-                
-                int userid = (int)TempData["UserId"];
+                int userid = 0;
+
+                if (TempData["UserId"] != null)
+                    userid = (int)TempData["UserId"];
+                else
+                    userid = id;
+
                 var vehicles = vehicleService.FindByUser(userid);
                 viewModel.vehicles = vehicles;
+                TempData["UserId"] = userid;
             }
             catch(Exception ex) { 
             }
@@ -43,9 +50,11 @@ namespace Bitzen_LeninAguiar.Controllers
         }
 
         // GET: Vehicle/Create
-        public ActionResult Create()
+        public ActionResult Create(int id)
         {
             VehicleViewModel viewModel = new VehicleViewModel();
+            TempData["UserId"] = id;
+            viewModel.userid = id;
             return View(viewModel);
         }
 
@@ -63,7 +72,15 @@ namespace Bitzen_LeninAguiar.Controllers
                 vehicle.model = viewModel.model;
                 vehicle.photopath = viewModel.photopath;
                 vehicle.plaque = viewModel.plaque;
-                vehicle.userid = (int) TempData["UserId"];
+                if (TempData["UserId"] != null)
+                    vehicle.userid = (int)TempData["UserId"];
+                else
+                {
+                    vehicle.userid = viewModel.userid;
+                    TempData["UserId"] = vehicle.userid;
+                }
+                    
+
                 vehicle.year = viewModel.year;
 
                 bool result = vehicleService.Create(vehicle);
@@ -71,6 +88,8 @@ namespace Bitzen_LeninAguiar.Controllers
                     viewModel.message = "Cadastro realizado com sucesso!";
                 else
                     viewModel.message = "Problema ao salvar registro";
+
+                viewModel.userid = vehicle.userid;
 
             }
             catch

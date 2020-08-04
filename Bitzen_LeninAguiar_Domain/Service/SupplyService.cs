@@ -4,10 +4,11 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
+using Bitzen_LeninAguiar_Domain.Interface;
 
 namespace Bitzen_LeninAguiar_Domain.Service
 {
-    public class SupplyService
+    public class SupplyService : ISupplyService
     {
         private SupplyRepository supplyRepository;
 

@@ -43,7 +43,7 @@
         <div class="col-sm-4">
             <span>Veículo</span>
             <select class="form-control" name="vehicleid" >
-                @if(Model.vehicles != null)
+                @if(Model != null && Model.vehicles != null)
                 {
                     @foreach(var item in Model.vehicles)
                     {
@@ -59,7 +59,7 @@
             <div class="text-right">
                 <input type="submit" id="send" name="send" class="btn btn-success" value="Registrar" />
 
-                @Html.ActionLink("Consulta", "Index", "Supply", new { }, new { @class = "btn btn-success" })
+                @Html.ActionLink("Consulta", "Index", "Supply", new { id = (Model != null ? Model.userid : 0) }, new { @class = "btn btn-success" })
 
             </div>
         </div>

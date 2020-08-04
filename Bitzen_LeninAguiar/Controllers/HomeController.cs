@@ -20,7 +20,13 @@ namespace Bitzen_LeninAguiar.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            HomeViewModel viewModel = new HomeViewModel();
+            if(TempData["UserId"] != null)
+            {
+                int userid = (int)TempData["UserId"];
+                viewModel.userid = userid;
+            }
+            return View(viewModel);
         }
 
         public IActionResult Privacy()
