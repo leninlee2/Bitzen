@@ -45,19 +45,25 @@ namespace Bitzen_LeninAguiar_Domain.Service
         public List<Supply> SearchLitersMonth(int userid)
         {
             List<Supply> supplies = new List<Supply>();
+            List<Supply> result = new List<Supply>();
             try
             {
                 supplies = supplyRepository.findAll().Where(w => w.userid == userid).ToList();
                 var partial = supplies.Select(s => new { month = s.datasupply.Month, quantity = s.quantity }).
                     GroupBy(g => g.month).Select(s2 => new { value = s2.Sum(s3 => s3.quantity), month = s2.Key }).ToList();
 
+                partial.ForEach(par =>
+                {
+                    result.Add(new Supply() { value = par.value, datasupply = new DateTime(DateTime.Now.Year, par.month, 1) });
+                });
 
-                supplies = partial.Select(s => new Supply() { value = s.value, datasupply = new DateTime(1, s.month, DateTime.Now.Year) }).ToList();
+                //result = partial.Select(s => new Supply() { value = s.value, datasupply = new DateTime(1, s.month, DateTime.Now.Year) }).ToList();
             }
             catch (Exception ex)
             {
+                throw ex;
             }
-            return supplies;
+            return result;
         }
 
     }

@@ -23,7 +23,7 @@ namespace Bitzen_LeninAguiar.Controllers
         }
 
         // GET: Supply
-        public ActionResult Index(int id, SupplyViewModel supplyViewModel = null)
+        public ActionResult Index(int id,List<Supply> supplies)
         {
             SupplyViewModel viewModel = new SupplyViewModel();
             try {
@@ -37,19 +37,17 @@ namespace Bitzen_LeninAguiar.Controllers
 
                 TempData["UserId"] = userid;
                 viewModel.userid = userid;
-                if (supplyViewModel == null || supplyViewModel.supplies == null)
-                    viewModel.supplies = supplyService.FindByUserId(userid);
-                else
-                    viewModel.supplies = supplyViewModel.supplies;
+                viewModel.supplies = supplyService.FindByUserId(userid);
+
             }
             catch(Exception ex)
             {
-
+                throw ex;
             }
             return View(viewModel);
         }
 
-        
+
 
         // GET: Supply/Details/5
         public ActionResult Details(int id)
@@ -165,13 +163,15 @@ namespace Bitzen_LeninAguiar.Controllers
 
             if (TempData["UserId"] != null)
                 userid = (int)TempData["UserId"];
+            else
+                userid = viewModel.userid;
 
             var result = supplyService.SearchLitersMonth(userid);
             viewModel.supplies = result;
             viewModel.userid = userid;
 
 
-            return RedirectToAction("Index",new {id = viewModel.reporttype, supplyViewModel = viewModel });
+            return RedirectToAction("Index",new {id = viewModel.reporttype, supplies = viewModel.supplies });
         }
 
         // POST: Supply/Delete/5
