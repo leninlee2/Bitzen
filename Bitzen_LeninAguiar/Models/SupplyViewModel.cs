@@ -32,6 +32,8 @@ namespace Bitzen_LeninAguiar.Models
 
         public List<Supply> supplies { get; set; }
 
+        public string reporttype { get; set; }
+
     }
 
 }

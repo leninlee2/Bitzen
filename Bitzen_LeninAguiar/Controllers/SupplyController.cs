@@ -23,7 +23,7 @@ namespace Bitzen_LeninAguiar.Controllers
         }
 
         // GET: Supply
-        public ActionResult Index(int id)
+        public ActionResult Index(int id, SupplyViewModel supplyViewModel = null)
         {
             SupplyViewModel viewModel = new SupplyViewModel();
             try {
@@ -45,6 +45,8 @@ namespace Bitzen_LeninAguiar.Controllers
             }
             return View(viewModel);
         }
+
+        
 
         // GET: Supply/Details/5
         public ActionResult Details(int id)
@@ -151,6 +153,18 @@ namespace Bitzen_LeninAguiar.Controllers
         public ActionResult Delete(int id)
         {
             return View();
+        }
+
+        // GET: Supply/Report/5
+        public ActionResult Report(SupplyViewModel viewModel)
+        {
+            int userid = 0;
+
+            if (TempData["UserId"] != null)
+                userid = (int)TempData["UserId"];
+
+
+            return RedirectToAction("Index",new {id = viewModel.reporttype, supplyViewModel = new SupplyViewModel() });
         }
 
         // POST: Supply/Delete/5
